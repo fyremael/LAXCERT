@@ -16,7 +16,7 @@ This document tracks `SPEC.md` section 13 in order. Do not advance remediation t
 | 6 | At least one nontrivial 2x2 differential-operator candidate compiles. | Complete for MVP. | `Matrix2x2OffDiagonalZero` certifies with `status: proof_succeeded`; fixture uses off-diagonal multiplication by `p`, diagonal `D_x`, evolution `p_t = p_x`, plus self/skew adjoint claims; CI and deterministic checks include it. | The full AKNS-like `D_x^2` calibration from `SPEC.md` section 10 remains a higher-strength post-MVP calibration. | Preserve the off-diagonal regression and consider section 10 calibration next. |
 | 7 | At least one intentionally false candidate fails. | Complete for MVP. | `FalseWrongSign` reports `proof_failed_nonzero_residual` with witness `entry: [0,0]`, `operator_order: 0`, `residual_display: 2*p_1^1`; CLI `--expect-failure` exits successfully and CI runs the gate. | Add false adjoint and higher-order negative cases later. | Preserve non-negotiable false-candidate gate. |
 | 8 | Proof status is recorded in an AETHER-compatible ledger object. | Complete for MVP. | `proof-status.json` now records candidate/generated/assumptions hashes, claim type, theorem, LAXFORGE version, LAXCERT version, Lean toolchain, mathlib revision, timestamp, build log URI, schema versions, and source metadata for external artifacts; pytest covers success and residual-failure ledger fields. | Append-only event streaming remains post-MVP. | Proceed to item 9 clean-checkout CI validation. |
-| 9 | The entire process runs in CI from a clean checkout. | Ready, pending remote CI evidence. | `.github/workflows/laxcert-ci.yml` runs Lean build, no-admission scan, Python install, positive toy/2x2/off-diagonal/3x3 generation, deterministic `git diff`, optional LAXFORGE artifact gate, false-candidate expected failure, and pytest; the same gate sequence passed locally on 2026-05-22. | This local `F:\_codex\LAXCERT` snapshot has no `.git`, so a true clean-checkout GitHub Actions run cannot be inspected or claimed here. | Run the workflow from the GitHub repository and record the Actions URL/status. |
+| 9 | The entire process runs in CI from a clean checkout. | Complete for MVP. | GitHub Actions clean-checkout run `https://github.com/fyremael/LAXCERT/actions/runs/26316729927` passed on 2026-05-22; workflow ran Lean build, no-admission scan, Python install, positive toy/2x2/off-diagonal/3x3 generation, deterministic `git diff`, optional LAXFORGE artifact gate, false-candidate expected failure, and pytest. | None for MVP. | Preserve workflow as the required release gate. |
 
 ## Item 1 Closeout Notes
 
@@ -147,7 +147,7 @@ Acceptance for MVP item 8:
 
 - Internal success, internal false-candidate failure, and external LAXFORGE success all produce ledger-shaped `proof-status.json` records with the required MVP governance fields.
 
-## Item 9 Readiness Notes
+## Item 9 Closeout Notes
 
 Requirement: prove the full process runs in CI from a clean checkout.
 
@@ -163,7 +163,7 @@ Implemented behavior:
 - It asserts the false candidate fails.
 - It runs pytest.
 
-Local verification:
+Local verification before remote run:
 
 ```powershell
 python -m pip install -e .[test]
@@ -177,6 +177,12 @@ python -m laxforge_laxcert.emitter_contract candidates/false_wrong_sign.json --r
 pytest -q
 ```
 
-Acceptance remaining for MVP item 9:
+Remote clean-checkout verification:
 
-- Run the GitHub Actions workflow from a real repository checkout and record the passing run URL.
+- Repository: `https://github.com/fyremael/LAXCERT`
+- Workflow run: `https://github.com/fyremael/LAXCERT/actions/runs/26316729927`
+- Result: passed, job `mvp` completed in 3m18s.
+
+Acceptance for MVP item 9:
+
+- The full MVP pipeline now runs from a GitHub clean checkout and records a passing Actions run URL.
