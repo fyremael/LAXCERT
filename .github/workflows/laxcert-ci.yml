@@ -1,0 +1,60 @@
+name: laxcert-ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  mvp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install elan
+        run: |
+          curl https://raw.githubusercontent.com/leanprover/elan/master/elan-init.sh -sSf | sh -s -- -y
+          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+      - name: Restore mathlib cache
+        working-directory: lean
+        run: lake exe cache get
+      - name: Build Lean core
+        working-directory: lean
+        run: lake -R build LaxCert
+      - name: No sorry/admit/axiom
+        run: '! grep -R "sorry\|admit\|axiom" lean/LaxCert'
+      - name: Install Python package
+        run: python -m pip install -e .[test]
+      - name: Generate positive toy candidate
+        run: python -m laxforge_laxcert.emitter_contract candidates/toy_lax_zero.json --repo-root .
+      - name: Generate positive 2x2 candidate
+        run: python -m laxforge_laxcert.emitter_contract candidates/matrix_2x2_zero.json --repo-root .
+      - name: Generate nontrivial off-diagonal 2x2 candidate
+        run: python -m laxforge_laxcert.emitter_contract candidates/matrix_2x2_offdiag_zero.json --repo-root .
+      - name: Generate positive 3x3 order-2 candidate
+        run: python -m laxforge_laxcert.emitter_contract candidates/matrix_3x3_order2_zero.json --repo-root .
+      - name: Deterministic regeneration check
+        run: |
+          git diff --exit-code -- \
+            lean/LaxCert/Generated/ToyLaxZero.lean \
+            lean/LaxCert/Generated/Matrix2x2Zero.lean \
+            lean/LaxCert/Generated/Matrix2x2OffDiagonalZero.lean \
+            lean/LaxCert/Generated/Matrix3x3Order2Zero.lean \
+            artifacts/ToyLaxZero/generated.lean \
+            artifacts/ToyLaxZero/generated.hash \
+            artifacts/Matrix2x2Zero/generated.lean \
+            artifacts/Matrix2x2Zero/generated.hash \
+            artifacts/Matrix2x2OffDiagonalZero/generated.lean \
+            artifacts/Matrix2x2OffDiagonalZero/generated.hash \
+            artifacts/Matrix3x3Order2Zero/generated.lean \
+            artifacts/Matrix3x3Order2Zero/generated.hash
+      - name: Certify optional LAXFORGE calibration artifact
+        run: |
+          if [ -n "${LAXFORGE_ARTIFACT_PATH:-}" ] && [ -e "$LAXFORGE_ARTIFACT_PATH" ]; then
+            python -m laxforge_laxcert.emitter_contract "$LAXFORGE_ARTIFACT_PATH" --repo-root .
+          else
+            echo "No external LAXFORGE artifact supplied; skipping optional calibration gate."
+          fi
+      - name: Assert false candidate fails
+        run: python -m laxforge_laxcert.emitter_contract candidates/false_wrong_sign.json --repo-root . --expect-failure
+      - name: Python tests
+        run: pytest
