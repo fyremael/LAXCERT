@@ -1,0 +1,65 @@
+{
+  "schema_version": "0.1.0",
+  "laxcert_schema_version": "0.1.0",
+  "candidate_id": "Matrix3x3Order2Zero",
+  "laxforge_version": "internal-fixture",
+  "laxcert_target_version": "0.1.0",
+  "scalar_ring": "rat_differential_polynomial",
+  "directions": {"space": ["x"], "time": "t"},
+  "fields": ["u", "p", "q"],
+  "evolution": {
+    "u": {"kind": "const", "value": 0},
+    "p": {"kind": "const", "value": 0},
+    "q": {"kind": "const", "value": 0}
+  },
+  "operators": {
+    "L": {
+      "rows": [
+        [
+          {"terms": [{"order": 2, "coeff": {"kind": "const", "value": 1}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]}
+        ],
+        [
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 2, "coeff": {"kind": "const", "value": 1}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]}
+        ],
+        [
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 2, "coeff": {"kind": "const", "value": 1}}]}
+        ]
+      ]
+    },
+    "P": {
+      "rows": [
+        [
+          {"terms": [{"order": 1, "coeff": {"kind": "const", "value": 1}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]}
+        ],
+        [
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 1, "coeff": {"kind": "const", "value": 1}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]}
+        ],
+        [
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 1, "coeff": {"kind": "const", "value": 1}}]}
+        ]
+      ]
+    }
+  },
+  "claims": [
+    {"type": "lax_equation", "proof_strategy": "coefficient_certificate"},
+    {"type": "self_adjoint_L", "proof_strategy": "coefficient_certificate"},
+    {"type": "skew_adjoint_P", "proof_strategy": "coefficient_certificate"}
+  ],
+  "assumptions": [
+    "formal differential operators over commuting scalar coefficients",
+    "formal adjoint ignores boundary terms"
+  ],
+  "provenance": {"source": "internal_fixture"}
+}

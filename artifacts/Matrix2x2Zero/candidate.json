@@ -1,0 +1,50 @@
+{
+  "schema_version": "0.1.0",
+  "laxcert_schema_version": "0.1.0",
+  "candidate_id": "Matrix2x2Zero",
+  "laxforge_version": "internal-fixture",
+  "laxcert_target_version": "0.1.0",
+  "scalar_ring": "rat_differential_polynomial",
+  "directions": {"space": ["x"], "time": "t"},
+  "fields": ["p", "q"],
+  "evolution": {
+    "p": {"kind": "jet", "field": "p", "order": 1},
+    "q": {"kind": "jet", "field": "q", "order": 1}
+  },
+  "operators": {
+    "L": {
+      "rows": [
+        [
+          {"terms": [{"order": 0, "coeff": {"kind": "jet", "field": "p", "order": 0}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]}
+        ],
+        [
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "jet", "field": "q", "order": 0}}]}
+        ]
+      ]
+    },
+    "P": {
+      "rows": [
+        [
+          {"terms": [{"order": 1, "coeff": {"kind": "const", "value": 1}}]},
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]}
+        ],
+        [
+          {"terms": [{"order": 0, "coeff": {"kind": "const", "value": 0}}]},
+          {"terms": [{"order": 1, "coeff": {"kind": "const", "value": 1}}]}
+        ]
+      ]
+    }
+  },
+  "claims": [
+    {"type": "lax_equation", "proof_strategy": "coefficient_certificate"},
+    {"type": "self_adjoint_L", "proof_strategy": "coefficient_certificate"},
+    {"type": "skew_adjoint_P", "proof_strategy": "coefficient_certificate"}
+  ],
+  "assumptions": [
+    "formal differential operators over commuting scalar coefficients",
+    "formal adjoint ignores boundary terms"
+  ],
+  "provenance": {"source": "internal_fixture"}
+}

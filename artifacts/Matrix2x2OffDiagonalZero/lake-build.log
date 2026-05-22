@@ -1,0 +1,14 @@
+âš  [13/13] Replayed LaxCert.Generated.Matrix2x2OffDiagonalZero
+warning: LaxCert/Generated/Matrix2x2OffDiagonalZero.lean:16:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/Matrix2x2OffDiagonalZero.lean:19:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/Matrix2x2OffDiagonalZero.lean:22:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/Matrix2x2OffDiagonalZero.lean:25:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (13 jobs).

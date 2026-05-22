@@ -1,0 +1,20 @@
+{
+  "assumptions_hash": "sha256:bf31af1a27b9006bbdf204c9b839d85b3ba881f813854f300b68909a9d00bd15",
+  "build_log_uri": "artifacts/Matrix3x3Order2Zero/lake-build.log",
+  "candidate_hash": "sha256:c45c01e1b382a2aa399fa0d9ea321733f0dde9a06b551333f152ee2feadabae4",
+  "candidate_id": "Matrix3x3Order2Zero",
+  "claim_type": "lax_equation,self_adjoint_L,skew_adjoint_P",
+  "event_type": "laxcert.proof.succeeded",
+  "generated_lean_hash": "sha256:e4a4e3a6598c911236de1585682509e01a7064fac38ca551d24621d84cab03ec",
+  "laxcert_schema_version": "0.1.0",
+  "laxcert_version": "laxcert:0.1.0",
+  "laxforge_version": "internal-fixture",
+  "lean_file": "F:\\_codex\\LAXCERT\\lean\\LaxCert\\Generated\\Matrix3x3Order2Zero.lean",
+  "lean_theorem": "LaxCert.Generated.Matrix3x3Order2Zero.candidate_satisfies_lax_equation",
+  "lean_toolchain": "leanprover/lean4:v4.29.1",
+  "mathlib_revision": "git:5e932f97dd25535344f80f9dd8da3aab83df0fe6",
+  "normalized_hash": "sha256:2dc8311b50626f0a9d4e139a30cbcfcad12feb03b5bc3b47b0a7f711c22ad869",
+  "schema_version": "0.1.0",
+  "status": "proof_succeeded",
+  "timestamp_utc": "2026-05-22T08:52:19Z"
+}

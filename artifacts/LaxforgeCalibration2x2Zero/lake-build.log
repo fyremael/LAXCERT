@@ -1,0 +1,14 @@
+âš  [13/13] Replayed LaxCert.Generated.LaxforgeCalibration2x2Zero
+warning: LaxCert/Generated/LaxforgeCalibration2x2Zero.lean:16:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/LaxforgeCalibration2x2Zero.lean:19:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/LaxforgeCalibration2x2Zero.lean:22:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/LaxforgeCalibration2x2Zero.lean:25:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (13 jobs).

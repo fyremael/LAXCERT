@@ -1,0 +1,27 @@
+{
+  "assumptions_hash": "sha256:9880720057f05c56edd44f2bb4c6e5d9ec1484e8466b787b48efb03a8a89d25c",
+  "build_log_uri": "artifacts/FalseWrongSign/lake-build.log",
+  "candidate_hash": "sha256:ab2ad7ddbff0dca4b88c7f5ad7922db4005c7a5f251197c7a8cc8636def61e73",
+  "candidate_id": "FalseWrongSign",
+  "claim_type": "lax_equation",
+  "event_type": "laxcert.proof.failed",
+  "laxcert_schema_version": "0.1.0",
+  "laxcert_version": "laxcert:0.1.0",
+  "laxforge_version": "internal-fixture",
+  "lean_toolchain": "leanprover/lean4:v4.29.1",
+  "mathlib_revision": "git:5e932f97dd25535344f80f9dd8da3aab83df0fe6",
+  "normalized_hash": "sha256:45f9f840555b20dee4e08210f39b2272553711bbd0ea78ad7a902f99e04bcf14",
+  "residual_witness": {
+    "claim_type": "lax_equation",
+    "entry": [
+      0,
+      0
+    ],
+    "operator_order": 0,
+    "residual_display": "2*p_1^1",
+    "status": "failed_nonzero_residual"
+  },
+  "schema_version": "0.1.0",
+  "status": "proof_failed_nonzero_residual",
+  "timestamp_utc": "2026-05-22T08:52:47Z"
+}

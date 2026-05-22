@@ -1,0 +1,20 @@
+{
+  "assumptions_hash": "sha256:9880720057f05c56edd44f2bb4c6e5d9ec1484e8466b787b48efb03a8a89d25c",
+  "build_log_uri": "artifacts/ToyLaxZero/lake-build.log",
+  "candidate_hash": "sha256:ab44f7cc1e1964b212d50949648d0b671da77f72701b1aee5ff54d0d84aef9a0",
+  "candidate_id": "ToyLaxZero",
+  "claim_type": "lax_equation",
+  "event_type": "laxcert.proof.succeeded",
+  "generated_lean_hash": "sha256:a6d624b70d62263955e494f3a6d2db416c5370e99c1799020158d6c9a2b02dd7",
+  "laxcert_schema_version": "0.1.0",
+  "laxcert_version": "laxcert:0.1.0",
+  "laxforge_version": "internal-fixture",
+  "lean_file": "F:\\_codex\\LAXCERT\\lean\\LaxCert\\Generated\\ToyLaxZero.lean",
+  "lean_theorem": "LaxCert.Generated.ToyLaxZero.candidate_satisfies_lax_equation",
+  "lean_toolchain": "leanprover/lean4:v4.29.1",
+  "mathlib_revision": "git:5e932f97dd25535344f80f9dd8da3aab83df0fe6",
+  "normalized_hash": "sha256:a28f4cccefdb584fbb25767379282926840394220d9d2129d3cd60655a6e4595",
+  "schema_version": "0.1.0",
+  "status": "proof_succeeded",
+  "timestamp_utc": "2026-05-22T08:53:06Z"
+}

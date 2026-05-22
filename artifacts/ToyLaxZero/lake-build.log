@@ -1,0 +1,37 @@
+âš  [13/13] Replayed LaxCert.Generated.ToyLaxZero
+warning: LaxCert/Generated/ToyLaxZero.lean:16:32: unused variable `k`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/ToyLaxZero.lean:18:39: unused variable `i`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/ToyLaxZero.lean:18:41: unused variable `j`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/ToyLaxZero.lean:24:39: unused variable `i`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/ToyLaxZero.lean:24:41: unused variable `j`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/ToyLaxZero.lean:33:49: unused variable `i`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/ToyLaxZero.lean:33:51: unused variable `j`
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: LaxCert/Generated/ToyLaxZero.lean:50:30: This simp argument is unused:
+  h_i
+
+Hint: Omit it from the simp argument list.
+  simp only [laxResidual, h_iÌµ,Ìµ ÌµhÌµ_Ìµj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: LaxCert/Generated/ToyLaxZero.lean:50:35: This simp argument is unused:
+  h_j
+
+Hint: Omit it from the simp argument list.
+  simp only [laxResidual, h_i,Ìµ ÌµhÌµ_ÌµjÌµ]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (13 jobs).
