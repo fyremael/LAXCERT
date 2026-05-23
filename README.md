@@ -52,6 +52,7 @@ MVP pipeline status:
 - deterministic Python normalization and Lean emission;
 - generated artifact folders under `artifacts/<candidate_id>/`;
 - internal positive toy candidate, internal diagonal and off-diagonal 2x2 candidates, and false-candidate failure gate;
+- section-10 transport calibration for `L = [[D_x^2, -q], [p, -D_x^2]]`, including a committed LAXFORGE-emitted artifact;
 - generated Lean coefficient certificates for toy and 2x2 fixtures, replacing vacuous `True` theorems;
 - GitHub Actions workflow for Lean, schema/emitter, generated positives, false negative, and pytest.
 
@@ -65,6 +66,8 @@ pytest
 python -m laxforge_laxcert.emitter_contract candidates/toy_lax_zero.json --repo-root .
 python -m laxforge_laxcert.emitter_contract candidates/matrix_2x2_zero.json --repo-root .
 python -m laxforge_laxcert.emitter_contract candidates/matrix_2x2_offdiag_zero.json --repo-root .
+python -m laxforge_laxcert.emitter_contract candidates/akns_d2_transport_zero.json --repo-root .
+python -m laxforge_laxcert.emitter_contract artifacts/LaxforgeAKNSD2TransportZero/candidate.json --repo-root .
 python -m laxforge_laxcert.emitter_contract candidates/false_wrong_sign.json --repo-root . --expect-failure
 ```
 

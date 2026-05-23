@@ -119,7 +119,20 @@ p & -D_x^2
 \end{pmatrix}.
 \]
 
-Certify the declared evolution equations against the generated `P`.
+The first certified section-10 transport target uses:
+
+\[
+P = D_x I,
+\qquad
+p_t = p_x,
+\qquad
+q_t = q_x.
+\]
+
+It certifies the declared evolution equations and `SkewAdjoint P`. A later
+nonlinear AKNS/mKdV calibration should replace this transport `P` with the
+full hierarchy operator and add any required reduction assumptions, such as
+`p = -q`, before asserting `SelfAdjoint L`.
 
 ### A6: false pair
 

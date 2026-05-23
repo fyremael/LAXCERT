@@ -59,6 +59,8 @@ git diff --exit-code -- \
   lean/LaxCert/Generated/ToyLaxZero.lean \
   lean/LaxCert/Generated/Matrix2x2Zero.lean \
   lean/LaxCert/Generated/Matrix2x2OffDiagonalZero.lean \
+  lean/LaxCert/Generated/AKNSD2TransportZero.lean \
+  lean/LaxCert/Generated/LaxforgeAKNSD2TransportZero.lean \
   lean/LaxCert/Generated/Matrix3x3Order2Zero.lean \
   artifacts/ToyLaxZero/generated.lean \
   artifacts/ToyLaxZero/generated.hash \
@@ -66,6 +68,10 @@ git diff --exit-code -- \
   artifacts/Matrix2x2Zero/generated.hash \
   artifacts/Matrix2x2OffDiagonalZero/generated.lean \
   artifacts/Matrix2x2OffDiagonalZero/generated.hash \
+  artifacts/AKNSD2TransportZero/generated.lean \
+  artifacts/AKNSD2TransportZero/generated.hash \
+  artifacts/LaxforgeAKNSD2TransportZero/generated.lean \
+  artifacts/LaxforgeAKNSD2TransportZero/generated.hash \
   artifacts/Matrix3x3Order2Zero/generated.lean \
   artifacts/Matrix3x3Order2Zero/generated.hash
 ```

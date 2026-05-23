@@ -30,6 +30,10 @@ jobs:
         run: python -m laxforge_laxcert.emitter_contract candidates/matrix_2x2_zero.json --repo-root .
       - name: Generate nontrivial off-diagonal 2x2 candidate
         run: python -m laxforge_laxcert.emitter_contract candidates/matrix_2x2_offdiag_zero.json --repo-root .
+      - name: Generate section-10 AKNS D2 transport candidate
+        run: python -m laxforge_laxcert.emitter_contract candidates/akns_d2_transport_zero.json --repo-root .
+      - name: Certify committed LAXFORGE section-10 AKNS D2 artifact
+        run: python -m laxforge_laxcert.emitter_contract artifacts/LaxforgeAKNSD2TransportZero/candidate.json --repo-root .
       - name: Generate positive 3x3 order-2 candidate
         run: python -m laxforge_laxcert.emitter_contract candidates/matrix_3x3_order2_zero.json --repo-root .
       - name: Deterministic regeneration check
@@ -38,6 +42,8 @@ jobs:
             lean/LaxCert/Generated/ToyLaxZero.lean \
             lean/LaxCert/Generated/Matrix2x2Zero.lean \
             lean/LaxCert/Generated/Matrix2x2OffDiagonalZero.lean \
+            lean/LaxCert/Generated/AKNSD2TransportZero.lean \
+            lean/LaxCert/Generated/LaxforgeAKNSD2TransportZero.lean \
             lean/LaxCert/Generated/Matrix3x3Order2Zero.lean \
             artifacts/ToyLaxZero/generated.lean \
             artifacts/ToyLaxZero/generated.hash \
@@ -45,6 +51,10 @@ jobs:
             artifacts/Matrix2x2Zero/generated.hash \
             artifacts/Matrix2x2OffDiagonalZero/generated.lean \
             artifacts/Matrix2x2OffDiagonalZero/generated.hash \
+            artifacts/AKNSD2TransportZero/generated.lean \
+            artifacts/AKNSD2TransportZero/generated.hash \
+            artifacts/LaxforgeAKNSD2TransportZero/generated.lean \
+            artifacts/LaxforgeAKNSD2TransportZero/generated.hash \
             artifacts/Matrix3x3Order2Zero/generated.lean \
             artifacts/Matrix3x3Order2Zero/generated.hash
       - name: Certify optional LAXFORGE calibration artifact
