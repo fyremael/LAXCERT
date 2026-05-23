@@ -20,6 +20,7 @@ This pack contains:
 - `docs/AETHER_LEDGER.md` — proof provenance and governance records.
 - `docs/ROADMAP.md` — build phases and milestones.
 - `docs/SPEC_TRACEABILITY.md` — ordered section 13 gap register and closeout evidence.
+- `docs/CONSOLE.md` — local visual console for candidates, artifacts, job queue, and operator commands.
 - `schemas/laxcert_candidate.schema.json` — JSON schema for emitted candidate certificates.
 - `python/laxforge_laxcert/emitter_contract.py` — typed Python-side contract sketch.
 - `lean/` — Lean project skeleton and illustrative module boundaries.
@@ -70,6 +71,14 @@ python -m laxforge_laxcert.emitter_contract candidates/akns_d2_transport_zero.js
 python -m laxforge_laxcert.emitter_contract artifacts/LaxforgeAKNSD2TransportZero/candidate.json --repo-root .
 python -m laxforge_laxcert.emitter_contract candidates/false_wrong_sign.json --repo-root . --expect-failure
 ```
+
+Local visual console:
+
+```bash
+python -m laxforge_laxcert.console_server --repo-root .
+```
+
+Open `http://127.0.0.1:8765` to inspect candidates, proof artifacts, the command queue, Lake/Pytest runs, and certifier results.
 
 For Lean/mathlib dependency refreshes, prefer WSL native storage rather than
 building from `/mnt/<drive>`. A reliable workflow is:
