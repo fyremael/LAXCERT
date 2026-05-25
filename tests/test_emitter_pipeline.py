@@ -28,13 +28,15 @@ def assert_indexed_certificate_shape(source: str) -> None:
 
 
 def test_committed_generated_sources_match_deterministic_emission(tmp_path: Path) -> None:
-    for candidate_name in [
-        "toy_lax_zero.json",
-        "matrix_2x2_zero.json",
-        "matrix_2x2_offdiag_zero.json",
-        "matrix_3x3_order2_zero.json",
+    for candidate_path in [
+        REPO_ROOT / "candidates" / "toy_lax_zero.json",
+        REPO_ROOT / "candidates" / "matrix_2x2_zero.json",
+        REPO_ROOT / "candidates" / "matrix_2x2_offdiag_zero.json",
+        REPO_ROOT / "candidates" / "akns_d2_transport_zero.json",
+        REPO_ROOT / "artifacts" / "LaxforgeAKNSD2TransportZero" / "candidate.json",
+        REPO_ROOT / "candidates" / "matrix_3x3_order2_zero.json",
     ]:
-        candidate = json.loads((REPO_ROOT / "candidates" / candidate_name).read_text(encoding="utf-8"))
+        candidate = json.loads(candidate_path.read_text(encoding="utf-8"))
         generated_path = emit_lean(candidate, tmp_path)
         generated_text = generated_path.read_text(encoding="utf-8")
         committed_lean = REPO_ROOT / "lean" / "LaxCert" / "Generated" / generated_path.name
@@ -82,6 +84,24 @@ def test_matrix_2x2_offdiag_candidate_succeeds() -> None:
     assert "def laxResidual_0_1" in source
     assert "selfAdjointLCoefficientCertificate" in source
     assert "skewAdjointPCoefficientCertificate" in source
+    assert_indexed_certificate_shape(source)
+
+
+def test_akns_d2_transport_candidate_succeeds() -> None:
+    result = build_candidate(REPO_ROOT / "candidates" / "akns_d2_transport_zero.json", REPO_ROOT)
+    assert result.status == "proof_succeeded"
+    source = result.lean_file.read_text(encoding="utf-8")
+    assert "theorem candidate_satisfies_lax_equation : True" not in source
+    assert "candidate_self_adjoint_L" not in source
+    assert "skewAdjointPCoefficientCertificate" in source
+    assert "MatrixOp 2 ScalarExpr 2" in source
+    assert "MatrixOp 2 ScalarExpr 1" in source
+    assert "MatrixOp 2 ScalarExpr 3" in source
+    assert "ScalarExpr.jetDx .p 0" in source
+    assert "ScalarExpr.jetDx .q 0" in source
+    assert "BoundedDiffOp.composeToBound 3" in source
+    assert "def laxResidual_0_1" in source
+    assert "def laxResidual_1_0" in source
     assert_indexed_certificate_shape(source)
 
 

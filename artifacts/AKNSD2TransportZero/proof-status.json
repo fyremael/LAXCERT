@@ -1,0 +1,20 @@
+{
+  "assumptions_hash": "sha256:92505c8f1eb8db746e79c5831ea61a05a396f63b7847cb115d42c698a2b4990d",
+  "build_log_uri": "artifacts/AKNSD2TransportZero/lake-build.log",
+  "candidate_hash": "sha256:fe09ef61ebec0b7fdf672c9ea07698caf58b591336be1b8aea6ef121a2779072",
+  "candidate_id": "AKNSD2TransportZero",
+  "claim_type": "lax_equation,skew_adjoint_P",
+  "event_type": "laxcert.proof.succeeded",
+  "generated_lean_hash": "sha256:54dd9cdfbd9399dc05f32c9357af75213a27b5da1b2c96f7dd3b6753f0345cde",
+  "laxcert_schema_version": "0.1.0",
+  "laxcert_version": "laxcert:0.1.0",
+  "laxforge_version": "internal-fixture",
+  "lean_file": "F:\\_codex\\LAXCERT\\lean\\LaxCert\\Generated\\AKNSD2TransportZero.lean",
+  "lean_theorem": "LaxCert.Generated.AKNSD2TransportZero.candidate_satisfies_lax_equation",
+  "lean_toolchain": "leanprover/lean4:v4.29.1",
+  "mathlib_revision": "git:5e932f97dd25535344f80f9dd8da3aab83df0fe6",
+  "normalized_hash": "sha256:5dccce0d3a4a21897d752d5e489b02150a7d95479122eb9556eafe7523df469a",
+  "schema_version": "0.1.0",
+  "status": "proof_succeeded",
+  "timestamp_utc": "2026-05-23T09:36:37Z"
+}
