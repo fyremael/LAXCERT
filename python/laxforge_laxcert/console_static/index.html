@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LAXCERT Console</title>
+    <link rel="stylesheet" href="/console.css">
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <div>
+          <p class="eyebrow">LAXCERT</p>
+          <h1>Proof Console</h1>
+        </div>
+        <div class="toolchain" id="toolchain">Loading toolchain...</div>
+      </header>
+
+      <aside class="command-rail">
+        <div class="rail-block">
+          <h2>Operator Commands</h2>
+          <label for="inputPath">Candidate input</label>
+          <input id="inputPath" type="text" value="candidates/toy_lax_zero.json" spellcheck="false">
+          <div class="command-grid" id="commands"></div>
+        </div>
+        <div class="rail-block compact">
+          <h2>Queue</h2>
+          <div id="queue" class="queue-list"></div>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <section class="metrics" id="metrics"></section>
+
+        <section class="split">
+          <div class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Inputs</p>
+                <h2>Candidates</h2>
+              </div>
+              <button id="refreshBtn" class="secondary">Refresh</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Candidate</th>
+                    <th>Source</th>
+                    <th>Fields</th>
+                    <th>Bounds</th>
+                    <th>Claims</th>
+                  </tr>
+                </thead>
+                <tbody id="candidateRows"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="panel detail-panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Ledger</p>
+                <h2>Selected Result</h2>
+              </div>
+            </div>
+            <div id="detail" class="detail"></div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Artifacts</p>
+              <h2>Proof Results</h2>
+            </div>
+          </div>
+          <div class="artifact-grid" id="artifacts"></div>
+        </section>
+
+        <section class="panel terminal-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Run Log</p>
+              <h2>Latest Job</h2>
+            </div>
+          </div>
+          <pre id="jobLog">No jobs queued.</pre>
+        </section>
+      </main>
+    </div>
+
+    <script src="/console.js"></script>
+  </body>
+</html>
