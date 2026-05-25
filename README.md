@@ -1,5 +1,10 @@
 # LAXCERT: Lean4 Companion Specification for LAXFORGE
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![CI](https://github.com/fyremael/LAXCERT/actions/workflows/laxcert-ci.yml/badge.svg)](https://github.com/fyremael/LAXCERT/actions/workflows/laxcert-ci.yml)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue.svg)](pyproject.toml)
+[![Lean 4.29.1](https://img.shields.io/badge/Lean-4.29.1-brightgreen.svg)](lean/lean-toolchain)
+
 **Status:** MVP proof pipeline implemented for internal fixtures, with generated Lean/artifact emission and CI gates.
 **Owner context:** Grand Challenge Labs / LAXFORGE.
 **Purpose:** make LAXFORGE a gauge-aware, proof-producing discovery engine for Lax pairs, zero-curvature representations, and operator identities.
