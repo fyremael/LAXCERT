@@ -6,7 +6,12 @@ build-backend = "setuptools.build_meta"
 name = "laxforge-laxcert"
 version = "0.1.0"
 description = "LAXCERT Python emitter and proof-status pipeline"
+license = "MIT"
 requires-python = ">=3.11"
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+]
 dependencies = [
   "jsonschema>=4.22",
 ]
